@@ -1,7 +1,4 @@
 import { Outlet, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import { AuthProvider } from "@/components/AuthContext";
-import { ThemeProvider } from "@/components/ThemeProvider";
 import Home from "./Home";
 
 const Index = () => {
@@ -12,11 +9,9 @@ const Index = () => {
   const isExactIndexPath = window.location.pathname === "/";
   
   return (
-    <ThemeProvider>
-      <AuthProvider>
-        {isExactIndexPath ? <Home /> : <Outlet />}
-      </AuthProvider>
-    </ThemeProvider>
+    <>
+      {isExactIndexPath ? <Home /> : <Outlet />}
+    </>
   );
 };
 
