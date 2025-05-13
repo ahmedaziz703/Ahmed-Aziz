@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Board, Piece, PieceColor, Square, createBoard, getPossibleMoves, isInCheck, isValidMove, makeMove, getComputerMove } from "@/lib/chess";
 import { useToast } from "@/hooks/use-toast";
@@ -219,7 +218,7 @@ export default function ChessBoard({ mode, playerColor = "white", onGameEnd, sha
     }
 
     return (
-      <div className="grid grid-cols-8 border-2 border-primary/50 shadow-lg w-full chess-board-container bg-secondary">
+      <div className="grid grid-cols-8 border-2 border-primary/50 shadow-lg w-full chess-board-container bg-secondary rounded-md">
         {rows.map(row => (
           cols.map(col => {
             const actualRow = shouldFlip ? 7 - row : row;
@@ -266,11 +265,11 @@ export default function ChessBoard({ mode, playerColor = "white", onGameEnd, sha
         </div>
         <div>
           {isCheck ? (
-            <div className="text-destructive font-bold">
+            <div className="text-destructive font-bold text-lg">
               {isCheck === "white" ? "الأبيض" : "الأسود"} في وضع الشاه!
             </div>
           ) : (
-            <div className="font-medium">
+            <div className="font-medium text-lg">
               دور {currentPlayer === "white" ? "الأبيض" : "الأسود"}
             </div>
           )}

@@ -103,6 +103,7 @@
   
   .chess-piece {
     @apply w-full h-full absolute top-0 left-0 transition-transform duration-200 cursor-pointer;
+    font-size: 2.5rem; /* Increased default size */
   }
   
   .chess-piece.dragging {
@@ -131,6 +132,12 @@
 }
 
 /* تكبير لوحة الشطرنج */
+.chess-board-container {
+  max-width: 550px !important; /* Increased base size */
+  width: 100% !important;
+  margin: 0 auto;
+}
+
 @media screen and (min-width: 768px) {
   .chess-board-container {
     max-width: 650px !important;
