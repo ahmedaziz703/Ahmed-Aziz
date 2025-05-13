@@ -1,13 +1,22 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Outlet, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { AuthProvider } from "@/components/AuthContext";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import Home from "./Home";
 
 const Index = () => {
+  const navigate = useNavigate();
+  
+  // If we're on the exact index path, render the Home component
+  // Otherwise, render the Outlet (for nested routes)
+  const isExactIndexPath = window.location.pathname === "/";
+  
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <ThemeProvider>
+      <AuthProvider>
+        {isExactIndexPath ? <Home /> : <Outlet />}
+      </AuthProvider>
+    </ThemeProvider>
   );
 };
 
