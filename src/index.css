@@ -103,7 +103,7 @@
   
   .chess-piece {
     @apply w-full h-full absolute top-0 left-0 transition-transform duration-200 cursor-pointer;
-    font-size: 2.5rem; /* Increased default size */
+    font-size: 3rem; /* زيادة الحجم الافتراضي */
   }
   
   .chess-piece.dragging {
@@ -133,25 +133,22 @@
 
 /* تكبير لوحة الشطرنج */
 .chess-board-container {
-  max-width: 550px !important; /* Increased base size */
+  max-width: 650px !important; /* زيادة الحجم الافتراضي */
   width: 100% !important;
   margin: 0 auto;
 }
 
-@media screen and (min-width: 768px) {
-  .chess-board-container {
-    max-width: 650px !important;
-    width: 100% !important;
-  }
-  
-  .chess-piece {
-    font-size: 3.5rem !important;
-  }
+/* إضافة مؤثرات للوحة */
+.chess-wrapper {
+  width: 100%;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  border-radius: 1rem;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .chess-board-container {
-    max-width: 750px !important;
+    max-width: 700px !important;
+    width: 100% !important;
   }
   
   .chess-piece {
@@ -159,6 +156,15 @@
   }
 }
 
+@media screen and (min-width: 1024px) {
+  .chess-board-container {
+    max-width: 800px !important;
+  }
+  
+  .chess-piece {
+    font-size: 4.5rem !important;
+  }
+}
+
 /* إضافة خط Cairo للعربية */
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
-
