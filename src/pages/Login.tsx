@@ -41,7 +41,7 @@ export default function Login() {
     <div className="min-h-screen flex items-center justify-center p-4 bg-background">
       <div className="w-full max-w-md space-y-8">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-primary">معلم الشطرنج</h1>
+          <h1 className="text-4xl font-bold text-primary">لعبة الشطرنج</h1>
           <p className="mt-2 text-lg text-muted-foreground">تسجيل الدخول إلى حسابك</p>
         </div>
         
