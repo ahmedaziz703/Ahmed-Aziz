@@ -37,7 +37,7 @@ export default function Home() {
 
       <main className="flex-1 container max-w-4xl py-8 px-4 mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-primary">معلم الشطرنج</h1>
+          <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-primary">لعبة الشطرنج</h1>
           <p className="text-lg text-muted-foreground max-w-xl mx-auto">
             العب الشطرنج مع الأصدقاء محلياً، تحدى الكمبيوتر، أو العب عبر الإنترنت مع الآخرين.
           </p>
@@ -110,7 +110,7 @@ export default function Home() {
         </div>
 
         <div className="mt-12 text-center">
-          <h2 className="text-2xl font-semibold mb-4">حول معلم الشطرنج</h2>
+          <h2 className="text-2xl font-semibold mb-4">حول لعبة الشطرنج</h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
             معلم الشطرنج هو تطبيق شطرنج جميل وحديث يتيح لك لعب الشطرنج بعدة طرق.
             مع تصميم أنيق، وضوابط بديهية، وأوضاع لعب متعددة، إنه الطريقة المثالية للاستمتاع بلعبة الشطرنج الخالدة.
