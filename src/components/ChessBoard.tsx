@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { Board, Piece, PieceColor, Square, createBoard, getPossibleMoves, isInCheck, isValidMove, makeMove, getComputerMove } from "@/lib/chess";
 import { useToast } from "@/hooks/use-toast";
@@ -218,7 +219,7 @@ export default function ChessBoard({ mode, playerColor = "white", onGameEnd, sha
     }
 
     return (
-      <div className="grid grid-cols-8 border-2 border-primary/50 shadow-lg w-full chess-board-container bg-secondary rounded-md">
+      <div className="grid grid-cols-8 border-4 border-primary/80 shadow-lg w-full chess-board-container bg-secondary rounded-lg">
         {rows.map(row => (
           cols.map(col => {
             const actualRow = shouldFlip ? 7 - row : row;
@@ -259,7 +260,7 @@ export default function ChessBoard({ mode, playerColor = "white", onGameEnd, sha
 
   return (
     <div className="flex flex-col items-center gap-4">
-      <div className="flex justify-between w-full chess-board-container p-2">
+      <div className="flex justify-between w-full p-2">
         <div>
           {renderCapturedPieces("black")}
         </div>
@@ -278,7 +279,7 @@ export default function ChessBoard({ mode, playerColor = "white", onGameEnd, sha
 
       {renderBoard()}
 
-      <div className="flex justify-between w-full chess-board-container p-2">
+      <div className="flex justify-between w-full p-2">
         <div>
           {renderCapturedPieces("white")}
         </div>

@@ -179,19 +179,21 @@ export default function OnlineGame() {
           </div>
         )}
 
-        <div className="w-full flex justify-center">
-          <ChessBoard
-            mode="online"
-            playerColor={playerColor}
-            onGameEnd={handleGameEnd}
-            shareId={newGameId}
-          />
+        <div className="w-full max-w-[900px] mx-auto bg-secondary/30 p-4 md:p-6 rounded-xl shadow-xl">
+          <div className="chess-wrapper">
+            <ChessBoard
+              mode="online"
+              playerColor={playerColor}
+              onGameEnd={handleGameEnd}
+              shareId={newGameId}
+            />
+          </div>
         </div>
 
         {gameEnded && (
           <div className="mt-6">
-            <Button onClick={handleNewGame} className="flex items-center gap-2">
-              <RotateCcw size={16} /> لعب لعبة جديدة
+            <Button onClick={handleNewGame} className="flex items-center gap-2 px-8 py-6 text-lg">
+              <RotateCcw size={20} /> لعب لعبة جديدة
             </Button>
           </div>
         )}

@@ -8,7 +8,6 @@ import { useToast } from "@/hooks/use-toast";
 import { PieceColor } from "@/lib/chess";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 export default function ComputerGame() {
   const navigate = useNavigate();
@@ -89,7 +88,7 @@ export default function ComputerGame() {
             </RadioGroup>
           </div>
 
-          <div className="w-full max-w-[800px] mx-auto bg-secondary/30 p-4 md:p-6 rounded-xl shadow-md">
+          <div className="w-full max-w-[900px] mx-auto bg-secondary/30 p-4 md:p-6 rounded-xl shadow-xl">
             <div className="chess-wrapper">
               <ChessBoard
                 key={gameId}

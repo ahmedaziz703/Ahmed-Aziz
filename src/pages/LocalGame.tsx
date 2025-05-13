@@ -57,17 +57,19 @@ export default function LocalGame() {
           <p className="text-muted-foreground">تناوبا على اللعب على نفس الجهاز</p>
         </div>
 
-        <div className="w-full flex justify-center">
-          <ChessBoard
-            key={gameId}
-            mode="local"
-            onGameEnd={handleGameEnd}
-          />
+        <div className="w-full max-w-[900px] mx-auto bg-secondary/30 p-4 md:p-6 rounded-xl shadow-xl">
+          <div className="chess-wrapper">
+            <ChessBoard
+              key={gameId}
+              mode="local"
+              onGameEnd={handleGameEnd}
+            />
+          </div>
         </div>
 
         {gameEnded && (
           <div className="mt-6">
-            <Button onClick={handleNewGame} className="flex items-center gap-2">
+            <Button onClick={handleNewGame} className="flex items-center gap-2 px-8 py-6 text-lg">
               <RotateCcw size={16} /> العب مرة أخرى
             </Button>
           </div>

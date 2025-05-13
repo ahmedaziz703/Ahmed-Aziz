@@ -103,7 +103,7 @@
   
   .chess-piece {
     @apply w-full h-full absolute top-0 left-0 transition-transform duration-200 cursor-pointer;
-    font-size: 3rem; /* زيادة الحجم الافتراضي */
+    font-size: 4rem; /* زيادة حجم القطع */
   }
   
   .chess-piece.dragging {
@@ -133,7 +133,7 @@
 
 /* تكبير لوحة الشطرنج */
 .chess-board-container {
-  max-width: 650px !important; /* زيادة الحجم الافتراضي */
+  max-width: 850px !important; /* زيادة الحجم بشكل كبير */
   width: 100% !important;
   margin: 0 auto;
 }
@@ -143,6 +143,20 @@
   width: 100%;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   border-radius: 1rem;
+  padding: 12px;
+  background-color: hsl(var(--secondary) / 0.8);
+}
+
+/* تحسين الشكل في الشاشات المختلفة */
+@media screen and (max-width: 767px) {
+  .chess-board-container {
+    max-width: 90vw !important;
+    width: 100% !important;
+  }
+  
+  .chess-piece {
+    font-size: 2rem !important;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -152,19 +166,31 @@
   }
   
   .chess-piece {
-    font-size: 4rem !important;
+    font-size: 3.5rem !important;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .chess-board-container {
-    max-width: 800px !important;
+    max-width: 850px !important;
   }
   
   .chess-piece {
-    font-size: 4.5rem !important;
+    font-size: 5rem !important;
   }
+}
+
+/* إضافة تأثيرات حركة للقطع */
+@keyframes piece-hover {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+.chess-piece:hover {
+  animation: piece-hover 0.5s ease-in-out;
 }
 
 /* إضافة خط Cairo للعربية */
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
+
