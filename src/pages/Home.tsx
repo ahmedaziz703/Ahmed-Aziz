@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <header className="p-4 flex justify-between items-center border-b">
-        <h1 className="text-2xl font-bold text-primary">معلم الشطرنج</h1>
+        <h1 className="text-2xl font-bold text-primary">اللعب الشطرنج</h1>
         <div className="flex gap-2">
           <Button
             variant="ghost"
