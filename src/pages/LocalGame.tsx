@@ -23,13 +23,13 @@ export default function LocalGame() {
     
     if (winner === "draw") {
       toast({
-        title: "Game Over",
-        description: "The game ended in a draw!",
+        title: "انتهت اللعبة",
+        description: "انتهت اللعبة بالتعادل!",
       });
     } else {
       toast({
-        title: "Game Over",
-        description: `${winner === "white" ? "White" : "Black"} won the game!`,
+        title: "انتهت اللعبة",
+        description: `${winner === "white" ? "الأبيض" : "الأسود"} فاز باللعبة!`,
       });
     }
   };
@@ -38,23 +38,23 @@ export default function LocalGame() {
     <div className="min-h-screen flex flex-col bg-background">
       <header className="p-4 flex justify-between items-center border-b">
         <Button variant="ghost" onClick={() => navigate("/")} className="flex items-center gap-2">
-          <ArrowLeft size={18} /> Back
+          <ArrowLeft size={18} /> رجوع
         </Button>
-        <h1 className="text-xl font-bold">Local Game</h1>
+        <h1 className="text-xl font-bold">لعبة محلية</h1>
         <Button
           variant="outline"
           size="sm"
           onClick={handleNewGame}
           className="flex items-center gap-1"
         >
-          <RotateCcw size={16} /> New Game
+          <RotateCcw size={16} /> لعبة جديدة
         </Button>
       </header>
 
       <main className="flex-1 container py-6 px-4 mx-auto flex flex-col items-center justify-center">
         <div className="text-center mb-6">
-          <h1 className="text-2xl font-bold mb-2">Local Two-Player Game</h1>
-          <p className="text-muted-foreground">Take turns playing on the same device</p>
+          <h1 className="text-2xl font-bold mb-2">لعبة محلية لشخصين</h1>
+          <p className="text-muted-foreground">تناوبا على اللعب على نفس الجهاز</p>
         </div>
 
         <div className="w-full flex justify-center">
@@ -68,7 +68,7 @@ export default function LocalGame() {
         {gameEnded && (
           <div className="mt-6">
             <Button onClick={handleNewGame} className="flex items-center gap-2">
-              <RotateCcw size={16} /> Play Again
+              <RotateCcw size={16} /> العب مرة أخرى
             </Button>
           </div>
         )}

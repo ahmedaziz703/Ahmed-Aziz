@@ -91,6 +91,8 @@
   body {
     @apply bg-background text-foreground font-sans;
     font-feature-settings: "rlig" 1, "calt" 1;
+    direction: rtl;
+    font-family: "Cairo", sans-serif;
   }
 }
 
@@ -127,3 +129,29 @@
     @apply flex items-center gap-2 px-4 py-3 rounded-lg transition-all duration-200 border hover:shadow-md;
   }
 }
+
+/* تكبير لوحة الشطرنج */
+@media screen and (min-width: 768px) {
+  .chess-board-container {
+    max-width: 650px !important;
+    width: 100% !important;
+  }
+  
+  .chess-piece {
+    font-size: 3.5rem !important;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .chess-board-container {
+    max-width: 750px !important;
+  }
+  
+  .chess-piece {
+    font-size: 4rem !important;
+  }
+}
+
+/* إضافة خط Cairo للعربية */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
+

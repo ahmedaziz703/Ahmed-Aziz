@@ -57,8 +57,8 @@ export default function ChessBoard({ mode, playerColor = "white", onGameEnd, sha
         } else {
           // Computer has no valid moves
           toast({
-            title: "Game Over",
-            description: "Computer has no valid moves. You win!",
+            title: "انتهت اللعبة",
+            description: "الكمبيوتر ليس لديه حركات صالحة. لقد فزت!",
           });
           onGameEnd?.(playerColor);
         }
@@ -219,7 +219,7 @@ export default function ChessBoard({ mode, playerColor = "white", onGameEnd, sha
     }
 
     return (
-      <div className="grid grid-cols-8 border-2 border-primary/50 shadow-lg w-full max-w-md sm:max-w-lg md:max-w-xl bg-secondary">
+      <div className="grid grid-cols-8 border-2 border-primary/50 shadow-lg w-full chess-board-container bg-secondary">
         {rows.map(row => (
           cols.map(col => {
             const actualRow = shouldFlip ? 7 - row : row;
@@ -233,7 +233,7 @@ export default function ChessBoard({ mode, playerColor = "white", onGameEnd, sha
                 onClick={() => handleSquareClick(actualRow, actualCol)}
               >
                 {piece && (
-                  <div className={`chess-piece flex items-center justify-center text-3xl sm:text-4xl md:text-5xl ${piece.color === "white" ? "text-white" : "text-black"}`}>
+                  <div className={`chess-piece flex items-center justify-center ${piece.color === "white" ? "text-white" : "text-black"}`}>
                     {getPieceSymbol(piece)}
                   </div>
                 )}
@@ -260,18 +260,18 @@ export default function ChessBoard({ mode, playerColor = "white", onGameEnd, sha
 
   return (
     <div className="flex flex-col items-center gap-4">
-      <div className="flex justify-between w-full max-w-md sm:max-w-lg md:max-w-xl p-2">
+      <div className="flex justify-between w-full chess-board-container p-2">
         <div>
           {renderCapturedPieces("black")}
         </div>
         <div>
           {isCheck ? (
             <div className="text-destructive font-bold">
-              {isCheck === "white" ? "White" : "Black"} is in check!
+              {isCheck === "white" ? "الأبيض" : "الأسود"} في وضع الشاه!
             </div>
           ) : (
             <div className="font-medium">
-              {currentPlayer === "white" ? "White" : "Black"}'s turn
+              دور {currentPlayer === "white" ? "الأبيض" : "الأسود"}
             </div>
           )}
         </div>
@@ -279,7 +279,7 @@ export default function ChessBoard({ mode, playerColor = "white", onGameEnd, sha
 
       {renderBoard()}
 
-      <div className="flex justify-between w-full max-w-md sm:max-w-lg md:max-w-xl p-2">
+      <div className="flex justify-between w-full chess-board-container p-2">
         <div>
           {renderCapturedPieces("white")}
         </div>

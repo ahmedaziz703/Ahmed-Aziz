@@ -23,8 +23,8 @@ export default function Register() {
     if (password !== confirmPassword) {
       toast({
         variant: "destructive",
-        title: "Passwords do not match",
-        description: "Please check your password and try again.",
+        title: "كلمات المرور غير متطابقة",
+        description: "يرجى التحقق من كلمة المرور والمحاولة مرة أخرى.",
       });
       return;
     }
@@ -34,15 +34,15 @@ export default function Register() {
     try {
       await register(username, email, password);
       toast({
-        title: "Account created",
-        description: "You have been registered and logged in successfully.",
+        title: "تم إنشاء الحساب",
+        description: "تم تسجيلك وتسجيل دخولك بنجاح.",
       });
       navigate("/");
     } catch (error) {
       toast({
         variant: "destructive",
-        title: "Registration error",
-        description: "Failed to create account. Please try again.",
+        title: "خطأ في التسجيل",
+        description: "فشل في إنشاء الحساب. يرجى المحاولة مرة أخرى.",
       });
     } finally {
       setIsLoading(false);
@@ -53,14 +53,14 @@ export default function Register() {
     <div className="min-h-screen flex items-center justify-center p-4 bg-background">
       <div className="w-full max-w-md space-y-8">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-primary">Chess Maestro</h1>
-          <p className="mt-2 text-lg text-muted-foreground">Create your account</p>
+          <h1 className="text-4xl font-bold text-primary">معلم الشطرنج</h1>
+          <p className="mt-2 text-lg text-muted-foreground">إنشاء حساب جديد</p>
         </div>
         
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="rounded-md shadow-sm space-y-4">
             <div>
-              <Label htmlFor="username">Username</Label>
+              <Label htmlFor="username">اسم المستخدم</Label>
               <Input
                 id="username"
                 name="username"
@@ -70,12 +70,12 @@ export default function Register() {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 className="auth-input"
-                placeholder="Username"
+                placeholder="اسم المستخدم"
               />
             </div>
             
             <div>
-              <Label htmlFor="email">Email address</Label>
+              <Label htmlFor="email">البريد الإلكتروني</Label>
               <Input
                 id="email"
                 name="email"
@@ -85,12 +85,12 @@ export default function Register() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="auth-input"
-                placeholder="Email address"
+                placeholder="البريد الإلكتروني"
               />
             </div>
             
             <div>
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password">كلمة المرور</Label>
               <Input
                 id="password"
                 name="password"
@@ -100,12 +100,12 @@ export default function Register() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="auth-input"
-                placeholder="Password"
+                placeholder="كلمة المرور"
               />
             </div>
             
             <div>
-              <Label htmlFor="confirmPassword">Confirm Password</Label>
+              <Label htmlFor="confirmPassword">تأكيد كلمة المرور</Label>
               <Input
                 id="confirmPassword"
                 name="confirmPassword"
@@ -115,7 +115,7 @@ export default function Register() {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 className="auth-input"
-                placeholder="Confirm Password"
+                placeholder="تأكيد كلمة المرور"
               />
             </div>
           </div>
@@ -123,7 +123,7 @@ export default function Register() {
           <div className="flex items-center justify-between">
             <div className="text-sm">
               <Link to="/login" className="font-medium text-primary hover:text-primary/80">
-                Already have an account?
+                لديك حساب بالفعل؟
               </Link>
             </div>
           </div>
@@ -134,7 +134,7 @@ export default function Register() {
               className="auth-button"
               disabled={isLoading}
             >
-              {isLoading ? "Creating account..." : "Sign up"}
+              {isLoading ? "جاري إنشاء الحساب..." : "التسجيل"}
             </Button>
           </div>
         </form>

@@ -26,18 +26,18 @@ export default function ComputerGame() {
     
     if (winner === "draw") {
       toast({
-        title: "Game Over",
-        description: "The game ended in a draw!",
+        title: "انتهت اللعبة",
+        description: "انتهت اللعبة بالتعادل!",
       });
     } else if (winner === playerColor) {
       toast({
-        title: "Congratulations!",
-        description: "You won the game!",
+        title: "تهانينا!",
+        description: "لقد فزت باللعبة!",
       });
     } else {
       toast({
-        title: "Game Over",
-        description: "The computer won this time. Try again!",
+        title: "انتهت اللعبة",
+        description: "الكمبيوتر فاز هذه المرة. حاول مرة أخرى!",
       });
     }
   };
@@ -51,23 +51,23 @@ export default function ComputerGame() {
     <div className="min-h-screen flex flex-col bg-background">
       <header className="p-4 flex justify-between items-center border-b">
         <Button variant="ghost" onClick={() => navigate("/")} className="flex items-center gap-2">
-          <ArrowLeft size={18} /> Back
+          <ArrowLeft size={18} /> رجوع
         </Button>
-        <h1 className="text-xl font-bold">Computer Game</h1>
+        <h1 className="text-xl font-bold">لعبة ضد الكمبيوتر</h1>
         <Button
           variant="outline"
           size="sm"
           onClick={handleNewGame}
           className="flex items-center gap-1"
         >
-          <RotateCcw size={16} /> New Game
+          <RotateCcw size={16} /> لعبة جديدة
         </Button>
       </header>
 
       <main className="flex-1 container py-6 px-4 mx-auto flex flex-col items-center justify-center">
         <div className="text-center mb-6">
-          <h1 className="text-2xl font-bold mb-2">Play Against Computer</h1>
-          <p className="text-muted-foreground">Challenge our AI opponent</p>
+          <h1 className="text-2xl font-bold mb-2">اللعب ضد الكمبيوتر</h1>
+          <p className="text-muted-foreground">تحدى الذكاء الاصطناعي</p>
         </div>
 
         <div className="mb-6">
@@ -78,11 +78,11 @@ export default function ComputerGame() {
           >
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="white" id="white" />
-              <Label htmlFor="white" className="cursor-pointer">Play as White</Label>
+              <Label htmlFor="white" className="cursor-pointer mr-2">اللعب بالأبيض</Label>
             </div>
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="black" id="black" />
-              <Label htmlFor="black" className="cursor-pointer">Play as Black</Label>
+              <Label htmlFor="black" className="cursor-pointer mr-2">اللعب بالأسود</Label>
             </div>
           </RadioGroup>
         </div>
@@ -99,7 +99,7 @@ export default function ComputerGame() {
         {gameEnded && (
           <div className="mt-6">
             <Button onClick={handleNewGame} className="flex items-center gap-2">
-              <RotateCcw size={16} /> Play Again
+              <RotateCcw size={16} /> العب مرة أخرى
             </Button>
           </div>
         )}

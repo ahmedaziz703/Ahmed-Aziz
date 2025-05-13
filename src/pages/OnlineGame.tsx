@@ -41,8 +41,8 @@ export default function OnlineGame() {
     navigate(`/play/online/${newGameId}`);
     setGameStarted(true);
     toast({
-      title: "Game created",
-      description: "Share the link with your opponent to begin playing.",
+      title: "تم إنشاء اللعبة",
+      description: "شارك الرابط مع خصمك لبدء اللعب.",
     });
   };
   
@@ -55,16 +55,16 @@ export default function OnlineGame() {
   const handleCopyLink = () => {
     navigator.clipboard.writeText(gameUrl);
     toast({
-      title: "Link copied",
-      description: "Game link has been copied to clipboard.",
+      title: "تم نسخ الرابط",
+      description: "تم نسخ رابط اللعبة إلى الحافظة.",
     });
   };
   
   const handleShare = () => {
     if (navigator.share) {
       navigator.share({
-        title: "Join my Chess Maestro game",
-        text: "Click this link to join my chess game:",
+        title: "انضم إلى لعبة الشطرنج الخاصة بي",
+        text: "انقر على هذا الرابط للانضمام إلى لعبة الشطرنج:",
         url: gameUrl,
       });
     } else {
@@ -77,13 +77,13 @@ export default function OnlineGame() {
     
     if (winner === "draw") {
       toast({
-        title: "Game Over",
-        description: "The game ended in a draw!",
+        title: "انتهت اللعبة",
+        description: "انتهت اللعبة بالتعادل!",
       });
     } else {
       toast({
-        title: "Game Over",
-        description: `${winner === "white" ? "White" : "Black"} won the game!`,
+        title: "انتهت اللعبة",
+        description: `${winner === "white" ? "الأبيض" : "الأسود"} فاز باللعبة!`,
       });
     }
   };
@@ -100,23 +100,23 @@ export default function OnlineGame() {
       <div className="min-h-screen flex flex-col bg-background">
         <header className="p-4 flex justify-between items-center border-b">
           <Button variant="ghost" onClick={() => navigate("/")} className="flex items-center gap-2">
-            <ArrowLeft size={18} /> Back
+            <ArrowLeft size={18} /> رجوع
           </Button>
-          <h1 className="text-xl font-bold">Online Game</h1>
+          <h1 className="text-xl font-bold">لعبة عبر الإنترنت</h1>
           <div></div>
         </header>
 
         <main className="flex-1 container py-12 px-4 mx-auto flex flex-col items-center justify-center">
           <Card className="w-full max-w-md">
             <CardContent className="p-6 space-y-6">
-              <h2 className="text-2xl font-bold text-center mb-4">Play Online</h2>
+              <h2 className="text-2xl font-bold text-center mb-4">اللعب عبر الإنترنت</h2>
               
               <div className="space-y-4">
                 <Button 
                   className="w-full text-lg py-6" 
                   onClick={handleCreateGame}
                 >
-                  Create New Game
+                  إنشاء لعبة جديدة
                 </Button>
                 
                 {gameId && (
@@ -125,14 +125,14 @@ export default function OnlineGame() {
                     onClick={handleJoinGame}
                     variant="secondary"
                   >
-                    Join Game {gameId}
+                    الانضمام للعبة {gameId}
                   </Button>
                 )}
               </div>
               
               {!gameId && (
                 <div className="text-center text-sm text-muted-foreground">
-                  <p>Create a new game and share the link with your friend</p>
+                  <p>أنشئ لعبة جديدة وشارك الرابط مع صديقك</p>
                 </div>
               )}
             </CardContent>
@@ -146,9 +146,9 @@ export default function OnlineGame() {
     <div className="min-h-screen flex flex-col bg-background">
       <header className="p-4 flex justify-between items-center border-b">
         <Button variant="ghost" onClick={() => navigate("/")} className="flex items-center gap-2">
-          <ArrowLeft size={18} /> Back
+          <ArrowLeft size={18} /> رجوع
         </Button>
-        <h1 className="text-xl font-bold">Online Game</h1>
+        <h1 className="text-xl font-bold">لعبة عبر الإنترنت</h1>
         {gameEnded && (
           <Button
             variant="outline"
@@ -156,7 +156,7 @@ export default function OnlineGame() {
             onClick={handleNewGame}
             className="flex items-center gap-1"
           >
-            <RotateCcw size={16} /> New Game
+            <RotateCcw size={16} /> لعبة جديدة
           </Button>
         )}
       </header>
@@ -166,15 +166,15 @@ export default function OnlineGame() {
           <div className="mb-6 w-full max-w-md">
             <div className="flex gap-2 mb-4">
               <Input value={gameUrl} readOnly className="flex-1" />
-              <Button variant="outline" onClick={handleCopyLink} title="Copy link">
+              <Button variant="outline" onClick={handleCopyLink} title="نسخ الرابط">
                 <Copy size={18} />
               </Button>
-              <Button variant="outline" onClick={handleShare} title="Share">
+              <Button variant="outline" onClick={handleShare} title="مشاركة">
                 <Share2 size={18} />
               </Button>
             </div>
             <p className="text-sm text-muted-foreground text-center">
-              Share this link with your opponent to start playing
+              شارك هذا الرابط مع خصمك لبدء اللعب
             </p>
           </div>
         )}
@@ -191,7 +191,7 @@ export default function OnlineGame() {
         {gameEnded && (
           <div className="mt-6">
             <Button onClick={handleNewGame} className="flex items-center gap-2">
-              <RotateCcw size={16} /> Play New Game
+              <RotateCcw size={16} /> لعب لعبة جديدة
             </Button>
           </div>
         )}
