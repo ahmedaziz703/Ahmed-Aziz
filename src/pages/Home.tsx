@@ -119,7 +119,7 @@ export default function Home() {
       </main>
 
       <footer className="p-4 border-t text-center text-sm text-muted-foreground">
-        <p>© {new Date().getFullYear()} معلم الشطرنج. جميع الحقوق محفوظة.</p>
+        <p>© {new Date().getFullYear()} أحمد الرقاص. جميع الحقوق محفوظة.</p>
       </footer>
     </div>
   );
